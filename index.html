@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>简单粗暴的移动端图片浏览插件demo</title>
+  <style>
+    #content img{
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h4>简单粗暴的移动端图片浏览插件demo</h4>
+  <div id="content">
+    <p>
+      <img src="./images/swiper-1.jpg" alt="">
+    </p>
+    <p>
+      <img src="./images/swiper-2.jpg" alt="">
+    </p>
+    <p>
+      <img src="./images/swiper-3.jpg" alt="">
+    </p>
+    <p>
+      <img src="./images/swiper-4.jpg" alt="">
+    </p>
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="./fly-zomm-img.min.js"></script>
+<script>
+  $('#content').FlyZommImg({
+      rollSpeed: 200,//切换速度
+      miscellaneous: false,//是否显示底部辅助按钮
+      closeBtn: true,//是否打开右上角关闭按钮
+      hideClass: 'hide',//不需要显示预览的 class
+      imgQuality: 'thumb',//图片质量类型  thumb 缩略图  original 默认原图
+      slitherCallback: function (direction, DOM) {//左滑动回调 两个参数 第一个动向 'left,firstClick,close' 第二个 当前操作DOM
+        //console.log(direction,DOM);
+      }
+    });
+</script>
+</html>
